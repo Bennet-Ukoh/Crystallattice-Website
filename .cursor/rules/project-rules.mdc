@@ -1,0 +1,121 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+Project Rules (Crystallattice Website)
+
+Description: Core rules, conventions, and architectural guidelines for the Crystallattice website.
+Always apply these rules across the project.
+
+📖 Project Overview
+
+Build a modern, responsive, professional frontend for Crystallattice Ltd.
+
+The site must be visually appealing, animated where necessary, and prepared for backend integration.
+
+⚙️ Technology Stack
+
+Language: TypeScript
+
+Framework: Next.js (App Router)
+
+Styling: Tailwind CSS (v4) + shadcn/ui components
+
+Animations: Framer Motion (professional, subtle transitions)
+
+State Management:
+
+Prefer Server Components for data fetching/rendering
+
+Use "use client" only for interactivity (hooks, events, animations)
+
+Forms & Validation:
+
+Use Zod schemas for form validation and type safety
+
+Integrate with shadcn/ui form components
+
+API:
+
+Use Next.js Server Actions for mutations
+
+Fetch data in Server Components
+
+Make provision for backend/database APIs (to be provided later)
+
+🏗️ Architecture & Code Style
+
+Directory Structure:
+
+/app → routes & pages
+
+/components/ui → shadcn/ui components
+
+/components/ → custom reusable components
+
+/lib → client setup, utilities, validation schemas, and Server Actions
+
+Component Design:
+
+Prefer Server Components
+
+Use Client Components only when required
+
+Naming:
+
+Components → PascalCase
+
+Utilities/Server Actions → camelCase
+
+Error Handling:
+
+Use try/catch in Server Actions & Route Handlers
+
+Use error.tsx files for route-level error handling
+
+Secrets:
+
+Never hardcode
+
+Always load from .env.local
+
+🎨 UI/UX Rules
+
+Brand colors: #B4E9A9 (primary green) & #FFB84F (accent yellow), applied consistently.
+
+Hero sections: clean, minimal with text overlay on sharp backgrounds (no clutter).
+
+Partners’ logos: animated on homepage.
+
+CTAs: must link to login/register or suitable sections.
+
+Temporary logins: students & instructors can log in and access dashboard placeholders.
+
+Courses section: display sample video/image clips of offerings.
+
+Animations: subtle, professional with Framer Motion.
+
+Loading/Success States:
+
+Every async action must have a loading spinner/skeleton
+
+Display success notifications/messages professionally (e.g., toast, banners with shadcn/ui)
+
+✅ Verification Checklist
+
+Before finalizing any code, confirm:
+
+Next.js App Router + Server Components used properly?
+
+Server Actions for mutations?
+
+Zod used for validation in forms?
+
+Loading/success/error states handled consistently with UI feedback?
+
+Provision made for backend/database interaction?
+
+shadcn/ui components used correctly?
+
+Brand colors + animations consistently applied?
