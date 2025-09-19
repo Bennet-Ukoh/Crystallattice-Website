@@ -35,7 +35,7 @@ export function HeroSection({ title, description, backgroundImage, ctaButtons, t
             style={{objectFit: "cover"}}
             priority
           />
-          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
         </div>
       )}
 

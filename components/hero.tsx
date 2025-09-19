@@ -30,7 +30,7 @@ export function Hero() {
       titleHighlight={siteInfo.heroSection.titlePart2}
     >
       {/* Additional content for the Hero, like stats, can be passed as children or handled within HeroSection if it becomes too complex */}
-      <div className="container px-4 mx-auto text-center relative z-10 pt-16">
+      {/* <div className="container px-4 mx-auto text-center relative z-10 pt-16">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
@@ -46,7 +46,7 @@ export function Hero() {
             </div>
           </div>
         </ScrollReveal>
-      </div>
+      </div> */}
     </HeroSection>
   );
 }

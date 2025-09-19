@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { ServicesPreview } from "@/components/services-preview"
 import { CoursesPreview } from "@/components/courses-preview"
-import { Partners } from "@/components/partners"
+import { PartnersSection } from "@/components/partners"
 import { CallToAction } from "@/components/call-to-action"
 import { HeroSection } from "@/components/hero-section"
 import { siteInfo } from "@/lib/content"
@@ -18,7 +18,6 @@ export default function HomePage() {
           ctaButtons={
             siteInfo.heroSection.ctaButtons.map((btn) => ({
               ...btn,
-              // Ensure 'variant' is only one of the allowed types or undefined
               variant: btn.variant as
                 "outline"
             }))
@@ -35,7 +34,7 @@ export default function HomePage() {
         </section>
 
         <section className="bg-muted">
-          <Partners />
+          <PartnersSection />
         </section>
 
         <section className="bg-gradient-to-r from-primary/20 via-background to-accent/20">

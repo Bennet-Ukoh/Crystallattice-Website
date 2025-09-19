@@ -51,7 +51,7 @@ export function ServicesPreview() {
             <Button
               size="lg"
               asChild
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-accent text-primary-foreground hover:bg-accent/90"
             >
               <Link href="/services">
                 View All Services

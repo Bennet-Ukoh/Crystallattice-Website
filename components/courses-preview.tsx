@@ -61,7 +61,7 @@ export function CoursesPreview() {
             <Button
               size="lg"
               asChild
-              className="hover:scale-105 transition-transform bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground"
+              className=" bg-accent text-primary-foreground hover:bg-accent/90 hover:text-accent-foreground"
             >
               <Link href="/training">
                 View All Courses
