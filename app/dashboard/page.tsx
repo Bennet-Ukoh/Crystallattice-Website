@@ -57,7 +57,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-muted/10">
       <Navigation /> {/* Add Navigation component here */}
-      <div className="container mx-auto px-4 space-y-8 py-8 pt-16">
+      <div className="container mx-auto px-4 space-y-8 py-8 pt-32">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
