@@ -4,6 +4,7 @@ import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import { Footer } from "@/components/footer"
+import { AuthProviderWrapper } from "@/components/auth-provider-wrapper"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="min-h-screen bg-background font-sans antialiased">
-        {children}
+        <AuthProviderWrapper>
+          {children}
+        </AuthProviderWrapper>
         <Toaster />
         <Footer />
       </body>

@@ -91,7 +91,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
         </section>
 
         {/* Article Content */}
-        <section className="py-16">
+        <section className="py-16 bg-muted/10">
           <div className="container px-4 mx-auto">
             <ScrollReveal>
               <div className="max-w-3xl mx-auto">
@@ -139,7 +139,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-r from-primary/5 via-background to-accent/5">
           <div className="container px-4 mx-auto">
             <ScrollReveal>
               <div className="text-center space-y-6 max-w-2xl mx-auto">

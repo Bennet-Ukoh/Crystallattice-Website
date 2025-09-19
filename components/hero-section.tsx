@@ -24,7 +24,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ title, description, backgroundImage, ctaButtons, titleHighlight, children }: HeroSectionProps) {
   return (
-    <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen py-24 md:py-32 flex items-center justify-center overflow-hidden">
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
           <Image

@@ -22,7 +22,7 @@ export default function ContactPage() {
         />
 
         {/* Contact Content */}
-        <section className="py-24">
+        <section className="py-24 bg-muted/10">
           <div className="container px-4 mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Contact Information */}

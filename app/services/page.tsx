@@ -35,7 +35,7 @@ export default function ServicesPage() {
         />
 
         {/* Services Grid */}
-        <section className="py-24">
+        <section className="py-24 bg-muted/10">
           <div className="container px-4 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => {
@@ -64,7 +64,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-muted/30">
+        <section className="py-24 bg-gradient-to-r from-primary/20 via-background to-accent/20">
           <div className="container px-4 mx-auto">
             <ScrollReveal>
               <div className="text-center space-y-8 max-w-2xl mx-auto">

@@ -55,7 +55,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-muted/10">
       <Navigation /> {/* Add Navigation component here */}
       <div className="container mx-auto px-4 space-y-8 py-8 pt-16">
         <motion.div

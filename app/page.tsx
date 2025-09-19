@@ -33,7 +33,7 @@ export default function HomePage() {
           <CoursesPreview />
         </section>
 
-        <section className="bg-muted">
+        <section className="bg-gradient-to-r from-muted/20 to-background">
           <PartnersSection />
         </section>
 

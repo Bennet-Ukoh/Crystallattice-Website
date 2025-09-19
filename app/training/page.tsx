@@ -41,7 +41,7 @@ export default function TrainingPage() {
         />
 
         {/* Courses Grid */}
-        <section className="py-24">
+        <section className="py-24 bg-muted/10">
           <div className="container px-4 mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {courses.map((course, index) => (
@@ -148,7 +148,7 @@ export default function TrainingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-r from-primary/20 via-background to-accent/20">
           <div className="container px-4 mx-auto">
             <ScrollReveal>
               <div className="text-center space-y-8 max-w-2xl mx-auto">

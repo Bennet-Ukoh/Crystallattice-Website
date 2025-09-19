@@ -7,6 +7,7 @@ import { blogs, blogsPage } from "@/lib/content"
 import Link from "next/link"
 import { HeroSection } from "@/components/hero-section"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export default function BlogsPage() {
   return (
@@ -19,7 +20,7 @@ export default function BlogsPage() {
         />
 
         {/* Blog Posts Grid */}
-        <section className="py-24">
+        <section className="py-24 bg-muted/10">
           <div className="container px-4 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {blogs.map((blog, index) => (
@@ -76,7 +77,7 @@ export default function BlogsPage() {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-24 bg-muted/30">
+        <section className="py-24 bg-gradient-to-r from-primary/20 via-background to-accent/20">
           <div className="container px-4 mx-auto">
             <ScrollReveal>
               <div className="text-center space-y-8 max-w-2xl mx-auto">
@@ -90,9 +91,9 @@ export default function BlogsPage() {
                     placeholder="Enter your email"
                     className="flex-1 px-4 py-2 rounded-lg border border-input bg-background"
                   />
-                  <button className="px-6 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors">
+                  <Button size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">
                     Subscribe
-                  </button>
+                  </Button>
                 </div>
               </div>
             </ScrollReveal>
