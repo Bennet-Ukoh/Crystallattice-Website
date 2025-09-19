@@ -65,7 +65,7 @@ export default function DashboardPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Welcome Back, {role === 'student' ? 'Student' : 'Instructor'}!</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">Welcome Back, {role === 'student' ? 'Student' : 'Instructor'}!</h1>
           <p className="text-lg text-muted-foreground">{dashboardData.description}</p>
         </motion.div>
 
