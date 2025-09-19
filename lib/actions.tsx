@@ -1,3 +1,5 @@
+"use server"
+
 import { z } from "zod"
 
 export type ActionResult = {
@@ -13,7 +15,11 @@ async function sleep(ms: number) {
 
 import { userLoginSchema, contactFormSchema } from "./validations"
 
-export async function loginUser(prevState: ActionResult | null, formData: FormData): Promise<ActionResult> {
+// ----------------- EXISTING ACTIONS -----------------
+export async function loginUser(
+  prevState: ActionResult | null,
+  formData: FormData
+): Promise<ActionResult> {
   try {
     await sleep(1500)
 
@@ -21,7 +27,6 @@ export async function loginUser(prevState: ActionResult | null, formData: FormDa
     const password = formData.get("password") as string
     const role = formData.get("role") as string
 
-    // Validate input using Zod
     const parsed = userLoginSchema.safeParse({ email, password, role })
 
     if (!parsed.success) {
@@ -32,17 +37,15 @@ export async function loginUser(prevState: ActionResult | null, formData: FormDa
       }
     }
 
-    // Destructure validated data
     const { email: validatedEmail, password: validatedPassword, role: validatedRole } = parsed.data
 
-    // Demo authentication logic
     const validCredentials = {
       "student@crystallattice.com": { password: "student123", role: "student" },
       "instructor@crystallattice.com": { password: "instructor123", role: "instructor" },
     }
 
     const user = validCredentials[validatedEmail as keyof typeof validCredentials]
-    
+
     if (!user || user.password !== validatedPassword || user.role !== validatedRole) {
       return {
         success: false,
@@ -50,10 +53,6 @@ export async function loginUser(prevState: ActionResult | null, formData: FormDa
       }
     }
 
-    // Here you would typically:
-    // 1. Verify credentials against database
-    // 2. Create session/JWT token
-    // 3. Set authentication cookies
     console.log("User login successful:", { email: validatedEmail, role: validatedRole })
 
     return {
@@ -69,7 +68,10 @@ export async function loginUser(prevState: ActionResult | null, formData: FormDa
   }
 }
 
-export async function submitContactForm(prevState: ActionResult | null, formData: FormData): Promise<ActionResult> {
+export async function submitContactForm(
+  prevState: ActionResult | null,
+  formData: FormData
+): Promise<ActionResult> {
   await sleep(1500)
   const parsed = contactFormSchema.safeParse({
     name: formData.get("name"),
@@ -92,5 +94,74 @@ export async function submitContactForm(prevState: ActionResult | null, formData
   return {
     success: true,
     message: "Your message has been sent successfully!",
+  }
+}
+
+// ----------------- NEW ACTIONS -----------------
+
+// Newsletter subscription
+const newsletterSchema = z.object({
+  email: z.string().email("A valid email is required"),
+})
+
+export async function subscribeToNewsletter(
+  prevState: ActionResult | null,
+  formData: FormData
+): Promise<ActionResult> {
+  await sleep(1000)
+
+  const parsed = newsletterSchema.safeParse({
+    email: formData.get("email"),
+  })
+
+  if (!parsed.success) {
+    return {
+      success: false,
+      message: "Invalid email address.",
+      errors: parsed.error.flatten().fieldErrors,
+    }
+  }
+
+  console.log("Newsletter subscription:", parsed.data)
+
+  return {
+    success: true,
+    message: "You have successfully subscribed to our newsletter!",
+  }
+}
+
+// User registration
+const registerSchema = z.object({
+  name: z.string().min(2, "Name is required"),
+  email: z.string().email("A valid email is required"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+})
+
+export async function registerUser(
+  prevState: ActionResult | null,
+  formData: FormData
+): Promise<ActionResult> {
+  await sleep(1500)
+
+  const parsed = registerSchema.safeParse({
+    name: formData.get("name"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+  })
+
+  if (!parsed.success) {
+    return {
+      success: false,
+      message: "Invalid registration details.",
+      errors: parsed.error.flatten().fieldErrors,
+    }
+  }
+
+  console.log("New user registered:", parsed.data)
+
+  return {
+    success: true,
+    message: "Registration successful! You can now log in.",
+    data: parsed.data,
   }
 }
