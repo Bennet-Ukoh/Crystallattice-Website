@@ -1,3 +1,5 @@
+import { ArrowRight, Code } from "lucide-react"
+
 // lib/content.ts
 export const siteInfo = {
   logo: "/images/logo.jpg", // Updated to use the new logo.jpg
@@ -13,10 +15,20 @@ export const siteInfo = {
     backgroundImage: "/images/embedded systems.jpg", // Updated hero background image to use embedded systems.jpg
     titlePart1: "Crystallattice Ltd",
     titlePart2: "Tech Start-Hub",
-    stats: [
-      { value: 4, label: "Core Services" },
-      { value: 120, label: "Students Trained" },
-      { value: 10, label: "Years Experience", icon: "Award" },
+    // ✅ Move CTA buttons here
+    ctaButtons: [
+      {
+        text: "Our Services",
+        href: "/services",
+        isPrimary: true,
+        icon: ArrowRight,
+      },
+      {
+        text: "Training Programs",
+        href: "/training",
+        icon: Code,
+        variant: "outline",
+      },
     ],
   },
 }
